@@ -1,13 +1,12 @@
 "use client"
 import React from 'react';
-
+import GridContainer from './components/GridContainer';
+import "./styles/styles.css"
 function InvoicesPage() {
   return (
-    <main>
-      <div>
-        content here
-      </div>
-    </main>
+    <>
+      <GridContainer></GridContainer>
+    </>
   )
 }
 
