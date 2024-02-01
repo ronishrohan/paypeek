@@ -1,8 +1,13 @@
-import React from 'react'
+"use client"
+import React from 'react';
 
 function InvoicesPage() {
   return (
-    <div>invoices here</div>
+    <main>
+      <div>
+        content here
+      </div>
+    </main>
   )
 }
 

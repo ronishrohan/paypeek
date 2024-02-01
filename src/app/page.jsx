@@ -1,9 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from "react";
+import { redirect } from "next/navigation";
 
-export default function page() {
-  return (
-    <div>
-      test
-    </div>
-  )
+export default function Page() {
+  function handleRedirect() {
+    redirect("/invoices")
+  }
+  useEffect(( )=> {
+    handleRedirect();
+  }, [])
+  return <div>test</div>;
 }
