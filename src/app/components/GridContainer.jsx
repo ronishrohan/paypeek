@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import "@/app/styles/styles.scss"
 
 function GridContainer({children}) {
   return (
