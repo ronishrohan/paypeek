@@ -1,9 +1,9 @@
 "use client";
 import React from 'react'
 import { icons } from '@/app/utils/icons'
-function SidebarButton({icon, title,children, click}) {
+function SidebarButton({icon, title,children, click, ...rest}) {
   return (
-    <button id='sidebar-button' onClick={click} >
+    <button className='sidebar-button' onClick={click} {...rest} >
         <div id='sidebar-button-icon' >
             {icons[icon]}
         </div>

@@ -15,6 +15,8 @@ function Sidebar() {
           <SidebarButton icon="github" title="Github" click={() => {
             window.open("https://github.com/ronishrohan")
           }} ></SidebarButton>
+          <SidebarButton icon="new" title="New Invoice" id="bottom" ></SidebarButton>
+          
         </div>
         <Profile></Profile>
     </div>

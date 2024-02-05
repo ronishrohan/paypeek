@@ -7,13 +7,15 @@
   border: 1px solid var(--card-border);
   overflow: hidden;
   min-width: 250px;
+  display: flex;
+  flex-direction: column;
 
   #profile-container {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background-color: var(--profile-bg);
     width: 100%;
-    height: 70px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
