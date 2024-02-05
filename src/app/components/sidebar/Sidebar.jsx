@@ -13,7 +13,7 @@ function Sidebar() {
           <SidebarButton icon="invoices" title="Invoices"><div id="invoices-pending" >8</div></SidebarButton>
           <SidebarButton icon="transactions" title="Transactions"  ></SidebarButton>
           <SidebarButton icon="github" title="Github" click={() => {
-            window.open("www.google.com")
+            window.open("https://github.com/ronishrohan")
           }} ></SidebarButton>
         </div>
         <Profile></Profile>
