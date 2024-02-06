@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect } from "react";
+import Home from "./components/Home";
 
 
 export default function Page() {
-  return <div>test</div>;
+  return <Home>test</Home>;
 }

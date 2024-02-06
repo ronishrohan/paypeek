@@ -9,7 +9,7 @@ function SidebarButton({icon, title,children, click, ...rest}) {
 
 
   return (
-    <button className={`sidebar-button`} id={`${icon===pathname ? "active" : "inactive"}`}  {...rest} >
+    <button onClick={click} className={`sidebar-button`} id={`${icon===pathname ? "active" : "inactive"}`}  {...rest} >
         <div id='sidebar-button-icon' >
             {icons[icon]}
         </div>

@@ -4,7 +4,7 @@ export
 
 function RootLayout({children}) {
   return (
-    <a>{children}</a>
+    <>{children}</>
   )
 }
 
