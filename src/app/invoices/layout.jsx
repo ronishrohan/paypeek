@@ -1,6 +1,9 @@
 import React from 'react'
 
-export 
+export const metadata = {
+  title: "Invoices",
+  description: "Your Invoices"
+}
 
 function RootLayout({children}) {
   return (

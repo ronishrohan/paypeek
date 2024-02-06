@@ -7,8 +7,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 export const metadata = {
-  title: "Invoices",
-  description: "Your invoices"
+  title: "Home",
+  description: "Paypeek"
 }
  
 export default function RootLayout({ children }) {
