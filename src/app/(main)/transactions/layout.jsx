@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-  title: "Transactions",
-  description: "Your Transactions"
-} 
+  title: "Invoices",
+  description: "Your Invoices"
+}
 
 function RootLayout({children}) {
   return (

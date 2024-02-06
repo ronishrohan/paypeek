@@ -2,7 +2,7 @@
 import React from 'react';
 import GridContainer from './components/GridContainer';
 import "./styles/styles.css"
-function InvoicesPage() {
+function TransactionsPage() {
   return (
     <>
       <GridContainer></GridContainer>
@@ -10,4 +10,4 @@ function InvoicesPage() {
   )
 }
 
-export default InvoicesPage
+export default TransactionsPage

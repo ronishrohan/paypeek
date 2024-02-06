@@ -1,6 +1,6 @@
 import "normalize.css";
-import "./styles/globals.scss";
-import GridContainer from "./components/GridContainer";
+import "@/app/styles/globals.scss";
+import GridContainer from "../components/GridContainer";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
@@ -11,9 +11,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body>{children}</body>
-    </html>
-  );
+  return <GridContainer>{children}</GridContainer>;
 }
