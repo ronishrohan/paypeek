@@ -31,7 +31,6 @@ body {
 }
 
 #home-container {
-  pointer-events: none;
   flex-direction: column;
   position: relative;
   overflow: hidden;
@@ -42,7 +41,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   #home-title {
-    font-size: 72px;
+    #home-red{
+      color: var(--accent);
+      font-style: italic;
+    }
+    #home-thick{
+      font-style: italic;
+      font-weight: 600;
+    }
+    font-size: 5vw;
   }
+  #home-content{
+    font-size: 1.4vw;
+    a{
+      position: relative;
+      color: var(--accent);
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#loading-screen{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
