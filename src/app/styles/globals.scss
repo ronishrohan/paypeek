@@ -30,7 +30,9 @@ body {
   box-sizing: border-box;
 }
 
-#home-container{
+#home-container {
+  pointer-events: none;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   background-color: var(--card-bg);
@@ -40,8 +42,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  #home-title{
-    pointer-events: none;
+  #home-title {
     font-size: 72px;
   }
 }
