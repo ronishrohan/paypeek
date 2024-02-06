@@ -4,19 +4,19 @@ import { icons } from '@/app/utils/icons'
 import { usePathname } from "next/navigation";
 import Link from "next/link"
 
-function SidebarButton({icon, title,children, click, ...rest}) {
+function SidebarLink({icon, title,children, click, ...rest}) {
   const pathname = usePathname().substring(1)
 
 
   return (
-    <button className={`sidebar-button`} id={`${icon===pathname ? "active" : "inactive"}`}  {...rest} >
+    <Link  href={`/${icon}`}  className={`sidebar-button sidebar-link`} id={`${icon===pathname ? "active" : "inactive"}`}  {...rest} >
         <div id='sidebar-button-icon' >
             {icons[icon]}
         </div>
         <div id='sidebar-button-text' >{title}</div>
         {children}
-    </button>
+    </Link>
   )
 }
 
-export default SidebarButton
+export default SidebarLink

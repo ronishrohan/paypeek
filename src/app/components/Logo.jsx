@@ -1,9 +1,10 @@
 import React from "react";
 import icon from "@/app/favicon.ico";
+import Link from "next/link"
 
 function Logo() {
   return (
-    <div id="logo-container">
+    <Link href="/" id="logo-container">
       <img id="logo-img" src={icon.src} alt="" />
       <div id="logo-text">
         <div id="logo-title" >
@@ -12,7 +13,7 @@ function Logo() {
         </div>
         <div id="logo-small">peek your payments?</div>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -10,6 +10,9 @@
     #bottom{
         margin-top: auto;
     }
+    #active{
+        background-color: #232323;
+    }
     .sidebar-button{
         display: flex;
         width: 100%;
@@ -27,6 +30,8 @@
         vertical-align: middle;
         position: relative;
         transition: outline 200ms;
+        box-sizing: border-box;
+        text-decoration: none;
         cursor: pointer;
         &:hover{
             background-color: #232323;
@@ -50,6 +55,7 @@
             height: 10px;
             text-align: center;
             border-radius: 50%;
+            color: white;
         }
     }
 }
