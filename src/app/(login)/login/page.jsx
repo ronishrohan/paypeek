@@ -1,28 +1,30 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import { icons } from "@/app/utils/icons";
+import LoginButton from "./components/LoginButton";
 function LoginPage() {
   return (
     <div id="login-page-container">
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ ease: "anticipate", type: "tween", duration: 1.2 }}
         id="login-card"
       >
-        <motion.button
+       <LoginButton></LoginButton>
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1,type: "tween", ease: "anticipate" }}
-          id="login-button"
+          transition={{
+            delay: 0.8,
+            duration: 1,
+            type: "tween",
+            ease: "anticipate",
+          }}
+          id="login-message"
         >
-          <div>
-            <span>login with </span>
-            <span id="login-google">google</span>
-          </div>
-          <div id="login-icon">{icons.link}</div>
-        </motion.button>
+          because thats all we have for now :(
+        </motion.div>
       </motion.div>
     </div>
   );

@@ -1,18 +1,23 @@
+"use client"
 import React from 'react'
 import Logout from './Logout'
+import { useSession } from 'next-auth/react'
 
 function Profile() {
+  const session = useSession();
+  console.log(session)
+  
   return (
     <div id='profile-container' >
         <div id='profile-picture' >
-          <img src="https://qph.cf2.quoracdn.net/main-thumb-914101296-200-aiyazzwpaqfgkkdsuirhjcnwfenlyfph.jpeg" alt="" />
+          <img src={session.data?.user?.image} alt="" />
         </div>
         <div id='profile-details' >
           <div id='profile-name' title="you've got a nice name :)" >
-            Ronish Rohan
+            {session.data?.user?.name}
           </div>
           <div id='profile-title' >
-            Freelancer
+            {session.data?.user?.email}
           </div>
         </div>
         <Logout></Logout>

@@ -21,7 +21,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    gap: 2vw;
+    #login-message{
+      font-size: 1vw;
+    }
     #login-button {
       z-index: 2;
       cursor: pointer;
@@ -35,6 +39,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: background-color 200ms;
       &:hover {
         background-color: #232323;
         #login-icon {
