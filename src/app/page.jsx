@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from "react";
-import Home from "./components/Home";
+import Home from "./(main)/components/Home";
 
 
 export default function Page() {
