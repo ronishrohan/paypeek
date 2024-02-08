@@ -8,7 +8,7 @@ function LoginPage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ ease: "anticipate", type: "tween", duration: 1.2 }}
+        transition={{ ease: "anticipate", type: "tween", duration: 1.2, delay: 0.3 }}
         id="login-card"
       >
        <LoginButton></LoginButton>
