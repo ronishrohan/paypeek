@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBriefcase, faWallet, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faBriefcase, faWallet, faStickyNote, faSquareArrowUpRight } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faIndianRupeeSign, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
 
 export const icons = {
@@ -8,5 +9,7 @@ export const icons = {
   invoices: <FontAwesomeIcon icon={faBriefcase} />,
   transactions: <FontAwesomeIcon icon={faWallet} />,
   github: <FontAwesomeIcon icon={faGithub} />,
-  new: <FontAwesomeIcon icon={faStickyNote} />
+  new: <FontAwesomeIcon icon={faStickyNote} />,
+  link: <FontAwesomeIcon icon={faSquareArrowUpRight} />
 };
+
