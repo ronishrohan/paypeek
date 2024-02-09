@@ -7,7 +7,7 @@ function Template({ children }) {
     useEffect(() => {
         setTimeout(() => {
             setTimer(true)
-        }, (1000));
+        }, (100));
     })
   return (
     <>
