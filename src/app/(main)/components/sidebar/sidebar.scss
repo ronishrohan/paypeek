@@ -12,6 +12,9 @@
     }
     #active{
         background-color: #232323;
+        &:hover{
+            background-color: #272727;
+        }
     }
     .sidebar-button{
         display: flex;
@@ -29,14 +32,12 @@
         font-size: 18px;
         vertical-align: middle;
         position: relative;
-        transition: outline 200ms;
         box-sizing: border-box;
         text-decoration: none;
+        transition: outline 200ms, background-color 200ms;
         cursor: pointer;
-        &:hover{
-            background-color: #232323;
-        }
         &:active{
+            background-color: #232323;
             outline: 1px solid var(--card-border);
         }
         #sidebar-button-icon{
