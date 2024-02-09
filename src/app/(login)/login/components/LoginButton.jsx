@@ -1,11 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import { icons } from "@/app/utils/icons";
 import {signIn} from "next-auth/react"
 function LoginButton() {
   return (
-    <>
+    <AnimatePresence>
       <motion.button
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ function LoginButton() {
         </div>
         <div id="login-icon">{icons.link}</div>
       </motion.button>
-    </>
+    </AnimatePresence>
   );
 }
 
