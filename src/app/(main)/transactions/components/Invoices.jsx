@@ -10,7 +10,7 @@ function Invoices() {
       id="invoices-container"
       className="invoices-card"
     >
-      Invoices
+      <div>Transactions</div>
     </motion.div>
   );
 }

@@ -1,5 +1,9 @@
 import React from "react";
+import InvoicesHeader from "./invoices/InvoicesHeader";
 import { motion } from "framer-motion";
+import InvoicesTable from "./invoices/InvoicesTable";
+
+
 
 function Invoices() {
   return (
@@ -10,7 +14,8 @@ function Invoices() {
       id="invoices-container"
       className="invoices-card"
     >
-      Invoices
+      <InvoicesHeader></InvoicesHeader>
+      <InvoicesTable></InvoicesTable>
     </motion.div>
   );
 }

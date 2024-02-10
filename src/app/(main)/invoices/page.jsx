@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import GridContainer from './components/GridContainer';
-import "./styles/styles.css"
+import "./components/styles.scss"
 function InvoicesPage() {
   return (
     <>
