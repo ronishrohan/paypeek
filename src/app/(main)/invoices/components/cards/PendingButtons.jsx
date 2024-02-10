@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React from "react";
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { SelectedContextProvider } from './store/SelectedContextProvider'
 
 export const metadata = {
   title: "Invoices",
@@ -7,7 +8,7 @@ export const metadata = {
 
 function RootLayout({children}) {
   return (
-    <>{children}</>
+    <SelectedContextProvider>{children}</SelectedContextProvider>
   )
 }
 

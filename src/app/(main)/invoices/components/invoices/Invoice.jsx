@@ -1,30 +1,45 @@
 "use client";
+import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React, { useEffect, useRef, useState } from "react";
 
 function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
+  const { updateCount } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
 
   useEffect(() => {
     setChecked(checked);
   }, [checked]);
+  useEffect(() => {
+    if(isChecked){
+      updateCount(id, 1)
+    }
+    else{
+      updateCount(id, -1)
+    }
+  }, [isChecked])
+  function handleClick() {
+    setAllCheckedOff();
+    setChecked((prev) => !prev);
+    
+  }
   let checkref = useRef();
   return (
     <div
       id="invoices-entry"
       className={isChecked ? "invoice-entry-active" : ""}
-      onClick={() => {setChecked(prev => !prev)}}
+      onClick={() => {
+        handleClick();
+      }}
     >
       <input
         ref={checkref}
         checked={isChecked}
         onChange={() => {
-          setAllCheckedOff();
-          setChecked((prev) => !prev);
+          handleClick();
         }}
         onClick={() => {
-          setAllCheckedOff();
-          setChecked((prev) => !prev);
+          handleClick();
         }}
         id="invoices-table-checkbox"
         type="checkbox"

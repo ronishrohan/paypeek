@@ -1,15 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InvoicesTableHeader from "./InvoicesTableHeader";
 import Invoice from "./Invoice";
+import { useSelectedContext } from "../../store/SelectedContextProvider";
 
-const invoices = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+const invoices = [1, 2, 3, 4, 5, 6, ,8,7, 9, 10];
 
 function InvoicesTable() {
+  const {resetCount} = useSelectedContext();
   const [allChecked, setAllChecked] = useState(false);
   const allCheckedRef = useRef();
-
+  useEffect(() => {
+    resetCount()
+  }, [])
   function checkAll(value) {
     setAllChecked(value);
   }

@@ -141,8 +141,31 @@
     align-items: center;
     font-size: 24px;
     font-weight: 800;
+    height: 45px;
+
+    #header-dustbin{
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-sizing: border-box;
+      font-size: 16px;
+      color: var(--text-dim-more);
+      cursor: pointer;
+      transition: border 100ms, background 100ms, color 100ms;
+      &:hover{
+        color: #ff7c7c;
+        background-color: #471616;
+        border-color: #7e3737;
+      }
+    }
 
     #header-new-invoice {
+      height: 40px;
       font-size: 16px;
       background-color: transparent;
       border: none;
@@ -152,6 +175,7 @@
       border: 1px solid transparent;
       border-radius: 24px;
       padding: 10px;
+      box-sizing: border-box;
       transition: border 100ms;
       &:hover {
         border: 1px solid var(--accent);
