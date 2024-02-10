@@ -11,8 +11,9 @@ function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
   let checkref = useRef();
   return (
     <div
-      
       id="invoices-entry"
+      className={isChecked ? "invoice-entry-active" : ""}
+      onClick={() => {setChecked(prev => !prev)}}
     >
       <input
         ref={checkref}

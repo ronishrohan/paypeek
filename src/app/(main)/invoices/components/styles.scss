@@ -164,13 +164,32 @@
     width: 100%;
 
     #invoice-entries {
+      
+      .invoice-entry-active{
+        background-color: #2e2e2e;
+        border: 1px solid #444444 !important;
+        &:hover{
+          background-color: #3a3a3a !important; 
+        }
+      }
       #invoices-entry {
+        cursor: pointer;
+        border: 1px solid transparent;
         z-index: 1;
-        margin-bottom: 20px;
+        padding: 15px;
+  
+        box-sizing: border-box;
         display: grid;
         width: 100%;
         grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
         gap: 20px;
+        transition: background 200ms ease-in, border 200ms;
+        border-radius: 16px;
+        margin-bottom: 4px;
+        &:hover{
+          background-color: #252525;
+        }
+        
         .invoices-column-entry {
           font-size: 15px;
           display: flex;
@@ -188,9 +207,13 @@
     }
 
     #invoices-table-header {
+      
+      padding: 15px;
+      box-sizing: border-box;
       z-index: 2;
       background-color: #1b1b1b;
       margin-bottom: 15px;
+      
       display: grid;
       width: 100%;
       grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
@@ -201,7 +224,7 @@
       border-bottom: 1px solid #2a2a2a;
 
       .invoices-column {
-        font-size: 14px;
+        font-size: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
