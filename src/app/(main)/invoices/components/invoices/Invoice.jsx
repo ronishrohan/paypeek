@@ -1,17 +1,37 @@
-import React from "react";
+"use client";
 
-function Invoice({id}) {
+import React, { useEffect, useRef, useState } from "react";
+
+function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
+  let [isChecked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(checked);
+  }, [checked]);
+  let checkref = useRef();
   return (
-    <div id="invoices-table-header">
-      <input id="invoices-table-checkbox" type="checkbox" />
+    <div
+      
+      id="invoices-entry"
+    >
+      <input
+        ref={checkref}
+        checked={isChecked}
+        onChange={() => {
+          setAllCheckedOff();
+          setChecked((prev) => !prev);
+        }}
+        id="invoices-table-checkbox"
+        type="checkbox"
+      />
       <div className="invoices-column-entry" id="invoices-table-left">
         {id}
       </div>
       <div className="invoices-column-entry" id="invoices-table-left">
-        CLIENT
+        {isChecked.toString()}
       </div>
       <div className="invoices-column-entry" id="invoices-table-right">
-        AMOUNT
+        ${amount}
       </div>
       <div className="invoices-column-entry">STATUS</div>
     </div>

@@ -12,6 +12,7 @@
 }
 
 body {
+  position: absolute;
   font-family: "PP Neue Montreal";
   background-color: var(--bg-col);
   color: var(--text-dim);
@@ -21,7 +22,7 @@ body {
 }
 
 #grid-container {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   display: grid;
@@ -33,6 +34,9 @@ body {
     grid-template-columns: 0fr 4fr;
     gap: 0;
     width: 100%;
+  }
+  & > div{
+    min-height: 0px;
   }
 }
 
@@ -87,4 +91,17 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+::-webkit-scrollbar{
+  width: 4px;
+}
+::-webkit-scrollbar-thumb{
+  width: 2px;
+  background-color: var(--text-dim-more);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track{
+  
 }
