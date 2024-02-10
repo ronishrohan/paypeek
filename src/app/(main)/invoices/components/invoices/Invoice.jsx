@@ -22,6 +22,10 @@ function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
           setAllCheckedOff();
           setChecked((prev) => !prev);
         }}
+        onClick={() => {
+          setAllCheckedOff();
+          setChecked((prev) => !prev);
+        }}
         id="invoices-table-checkbox"
         type="checkbox"
       />
