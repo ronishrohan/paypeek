@@ -11,6 +11,7 @@ function LoginPage() {
         transition={{ ease: "anticipate", type: "tween", duration: 1.2, delay: 0.3 }}
         id="login-card"
       >
+        <div>login with</div>
        <LoginButton></LoginButton>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -23,7 +24,7 @@ function LoginPage() {
           }}
           id="login-message"
         >
-          because thats all we have for now :(
+          
         </motion.div>
       </motion.div>
     </div>
