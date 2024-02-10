@@ -47,6 +47,12 @@
             font-size: 20px;
             
         }
+        #sidebar-loading-icon{
+            
+            svg{
+                animation: rotate 0.5s infinite linear;
+            }
+        }
         #invoices-pending{
             font-size: 18px;
             margin-left: auto;
@@ -61,5 +67,14 @@
             border-radius: 50%;
             color: white;
         }
+    }
+}
+
+@keyframes rotate {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
     }
 }

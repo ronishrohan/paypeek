@@ -11,6 +11,8 @@
   --accent: #ff3d40;
 }
 
+
+
 body {
   position: absolute;
   font-family: "PP Neue Montreal";
@@ -19,6 +21,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  scrollbar-width: thin;
 }
 
 #grid-container {
