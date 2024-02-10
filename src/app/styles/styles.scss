@@ -9,6 +9,9 @@
   min-width: 250px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 900px) {
+    display: none;
+  }
 
   #profile-container {
     position: relative;

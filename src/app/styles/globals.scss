@@ -29,6 +29,11 @@ body {
   gap: 15px;
   padding: 15px;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    grid-template-columns: 0fr 4fr;
+    gap: 0;
+    width: 100%;
+  }
 }
 
 #home-container {
