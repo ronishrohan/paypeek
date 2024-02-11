@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import InvoicesHeader from "./invoices/InvoicesHeader";
 import { motion } from "framer-motion";

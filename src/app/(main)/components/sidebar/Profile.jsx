@@ -2,18 +2,10 @@
 import React, { useEffect } from "react";
 import Logout from "./Logout";
 import { useSession } from "next-auth/react";
-import { fetchData } from "@/app/utils/fetch";
+
 
 function Profile() {
   const session = useSession();
-  useEffect(() => {
-    if (session.data?.user) {
-      fetchData("/api/check-create-user", {
-        name: session.data.user.name,
-        email: session.data.user.email,
-      });
-    }
-  }, [session.data]);
 
   return (
     <div id="profile-container">

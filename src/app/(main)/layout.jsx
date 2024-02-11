@@ -9,7 +9,8 @@ import {redirect} from "next/navigation"
 config.autoAddCss = false;
 import Providers from "./components/Providers";
 import InvoicePopupWrapper from "./components/popup/InvoicePopupWrapper";
-import { fetchData } from "../utils/fetch";
+import { createUser } from "../libs/utils/createUser";
+
 export const metadata = {
   title: "Home",
   description: "Paypeek",
@@ -19,6 +20,9 @@ export default async function RootLayout({ children }) {
   const session = await getServerSession();
   if(session == null){
     redirect("/login")
+  }
+  else{
+    await createUser({name: session.user.name, email: session.user.email})
   }
   return <Providers>
     <InvoicePopupWrapper></InvoicePopupWrapper>

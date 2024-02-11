@@ -3,7 +3,7 @@ import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React, { useEffect, useRef, useState } from "react";
 
-function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
+function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status }) {
   const { updateCount } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
 
@@ -48,12 +48,12 @@ function Invoice({ id, amount, checked, setAllCheckedOff, delay }) {
         {id}
       </div>
       <div className="invoices-column-entry" id="invoices-table-left">
-        {isChecked.toString()}
+        {client}
       </div>
       <div className="invoices-column-entry" id="invoices-table-right">
         ${amount}
       </div>
-      <div className="invoices-column-entry">STATUS</div>
+      <div className="invoices-column-entry">{status}</div>
     </div>
   );
 }
