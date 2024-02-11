@@ -40,11 +40,12 @@ body {
       border: none;
       background-color: transparent;
       color: #a3a3a3;
-      font-size: 2vw;
+      font-size: 1.5vw;
       display: flex;
       justify-content: center;
       align-items: center;
       transition: background-color 200ms;
+      width: 12vw;
       &:hover {
         background-color: #232323;
         #login-icon {
