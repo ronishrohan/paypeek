@@ -24,9 +24,6 @@ function SidebarLink({ icon, title, children, click, ...rest }) {
       };
     }
   }, [loading]);
-  useEffect(() => {
-    console.log(timer);
-  }, [timer]);
   return (
     <Link
       href={`/${icon}`}

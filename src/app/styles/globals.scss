@@ -169,6 +169,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            pointer-events: none;
           }
           #popup-submit-text{
             transition: opacity 200ms;

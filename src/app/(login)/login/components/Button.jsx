@@ -6,19 +6,24 @@ import { signIn } from "next-auth/react";
 
 function Button({ children }) {
   let [loading, setLoading] = useState(false);
+
+
+  function handleLogin(){
+    signIn(children.toLowerCase(), { callbackUrl: "/home" });
+  }
   return (
     <motion.button
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        delay: 0.2 + Math.random(),
+        delay: 0.6,
         duration: 1,
         type: "tween",
         ease: "anticipate",
       }}
       onClick={() => {
-        setLoading(true)
-        signIn(children.toLowerCase(), { callbackUrl: "/home" });
+        setLoading(true);
+        handleLogin();
       }}
       id="login-button"
     >

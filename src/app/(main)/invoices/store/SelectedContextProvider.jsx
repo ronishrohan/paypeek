@@ -14,9 +14,7 @@ export function SelectedContextProvider({ children }) {
   function resetCount(){
     setCount(0)
   }
-  useEffect(() => {
-    console.log(count)
-  }, [count])
+  
   return <SelectedContext.Provider value={{updateCount, resetCount, count}} >{children}</SelectedContext.Provider>;
 }
 
