@@ -182,7 +182,20 @@
       }
     }
   }
+  &:before{
+    content: ' ';
+    position: fixed;
+    width: calc(100% - 40px);
+    height: 80px;
+    background: linear-gradient(0deg, var(--card-bg), transparent);
+    bottom: 0;
+    margin-bottom: 20px;
+    z-index: 2;
+    pointer-events: none;
+    
+  }
   #invoices-table {
+    
     overflow-y: scroll;
     height: 100%;
     width: 100%;

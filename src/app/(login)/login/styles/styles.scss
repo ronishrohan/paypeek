@@ -12,6 +12,11 @@ body {
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
+  #login-buttons-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
   #login-card {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);

@@ -4,8 +4,10 @@ import SidebarLink from "./SidebarLink";
 import SidebarButton from "./SidebarButton";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
+import { useInvoicePopup } from "../popup/InvoicePopupWrapper";
 
 function SidebarButtons() {
+  const {handleOpen} = useInvoicePopup();
   const pathname = usePathname().substring(1);
   return (
     <div id="sidebar-buttons-container">
@@ -26,6 +28,7 @@ function SidebarButtons() {
             icon="new"
             title={`New ${pathname == "invoices" ? "Invoice" : "Transaction"}`}
             id="bottom"
+            click={handleOpen}
           ></SidebarButton>
         ) : null}
       </AnimatePresence>

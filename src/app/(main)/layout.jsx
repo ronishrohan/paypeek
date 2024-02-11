@@ -7,7 +7,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import { getServerSession } from "next-auth";
 import {redirect} from "next/navigation"
 config.autoAddCss = false;
-
+import InvoicePopupWrapper from "./components/popup/InvoicePopupWrapper";
+import { InvoicePopupProvider } from "./components/popup/InvoicePopupWrapper";
 export const metadata = {
   title: "Home",
   description: "Paypeek",
@@ -21,5 +22,8 @@ export default async function RootLayout({ children }) {
   else{
     console.log(session)
   }
-  return <GridContainer>{children}</GridContainer>;
+  return <InvoicePopupProvider>
+    <InvoicePopupWrapper></InvoicePopupWrapper>
+    <GridContainer>{children}</GridContainer>
+  </InvoicePopupProvider>;
 }

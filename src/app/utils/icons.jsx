@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBriefcase, faWallet, faStickyNote, faSquareArrowUpRight, faCircleNotch, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faRightFromBracket, faBriefcase, faWallet, faStickyNote, faSquareArrowUpRight, faCircleNotch, faTrashCan, faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faGithub, faGoogle, faReddit } from "@fortawesome/free-brands-svg-icons";
 import { faIndianRupeeSign, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import loading from "../loading";
 
@@ -14,6 +14,9 @@ export const icons = {
   link: <FontAwesomeIcon icon={faSquareArrowUpRight} />,
   google: <FontAwesomeIcon icon={faGoogle} />,
   loading: <FontAwesomeIcon icon={faCircleNotch} ></FontAwesomeIcon>,
-  remove: <FontAwesomeIcon icon={faTrashCan} ></FontAwesomeIcon>
+  remove: <FontAwesomeIcon icon={faTrashCan} ></FontAwesomeIcon>,
+  rightarrow: <FontAwesomeIcon icon={faArrowRightLong} ></FontAwesomeIcon>,
+  discord: <FontAwesomeIcon icon={faDiscord} ></FontAwesomeIcon>,
+  reddit: <FontAwesomeIcon icon={faReddit} ></FontAwesomeIcon>
 };
 
