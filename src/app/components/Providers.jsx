@@ -4,7 +4,7 @@ import {AnimatePresence} from "framer-motion";
 import { SessionProvider } from 'next-auth/react'
 function Providers({children}) {
   return (
-    <SessionProvider><AnimatePresence>{children}</AnimatePresence></SessionProvider>
+    <SessionProvider refetchOnWindowFocus={false} ><AnimatePresence>{children}</AnimatePresence></SessionProvider>
   )
 }
 

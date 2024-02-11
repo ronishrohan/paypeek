@@ -8,26 +8,29 @@ import { useInvoicesData } from "../store/InvoicesDataProvider";
 import { useSession } from "next-auth/react";
 
 function GridContainer() {
-  const session = useSession();
+  const { data: session, status } = useSession();
   const { updateData } = useInvoicesData();
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   useEffect(() => {
-    async function fetchInvoices() {
-      setLoading(true);
-      const res = await fetchDataPOST("/api/getuserdata", {
-        name: session.data.user.name,
-        email: session.data.user.email,
-      });
-      updateData(res.data);
-      setLoading(false);
-    }
-    if (session.data?.user) {
+    
+    if (status=="authenticated") {
+      async function fetchInvoices() {
+        setLoading(true);
+        const res = await fetchDataPOST("/api/getuserdata", {
+          name: session.user.name,
+          email: session.user.email,
+        });
+        updateData(res.data);
+        setLoading(false);
+      }
       fetchInvoices();
     }
-  }, [session.data]);
+  }, [session]);
   return (
     <>
-      {loading ? <div>loading</div> : (
+      {isLoading ? (
+        <div>isLoading</div>
+      ) : (
         <div id="invoices-grid-container">
           <div id="top-grid">
             <Balance></Balance>
