@@ -6,14 +6,14 @@ import Pending from "./Pending";
 import { fetchDataPOST } from "@/app/utils/post";
 import { useInvoicesData } from "../store/InvoicesDataProvider";
 import { useSession } from "next-auth/react";
+import { getData } from "./serveraction";
 
 function GridContainer() {
   const { data: session, status } = useSession();
   const { updateData } = useInvoicesData();
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
-    
-    if (status=="authenticated") {
+    if (status == "authenticated") {
       async function fetchInvoices() {
         setLoading(true);
         const res = await fetchDataPOST("/api/getuserdata", {
@@ -21,6 +21,7 @@ function GridContainer() {
           email: session.user.email,
         });
         updateData(res.data);
+
         setLoading(false);
       }
       fetchInvoices();
