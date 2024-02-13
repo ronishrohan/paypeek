@@ -280,7 +280,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: border 200ms, background 350ms ease-out, scale 200ms ease-out;
+  transition: border 200ms, background 120ms, scale 200ms ease-out;
   &:hover{
     border: 1px solid rgb(182, 182, 182);
    
