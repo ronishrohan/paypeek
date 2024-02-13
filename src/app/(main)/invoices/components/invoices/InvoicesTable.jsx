@@ -1,26 +1,24 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import InvoicesTableHeader from "./InvoicesTableHeader";
 import Invoice from "./Invoice";
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 import { useInvoicesData } from "../../store/InvoicesDataProvider";
 
-
 function InvoicesTable() {
   const { resetCount } = useSelectedContext();
   const [allChecked, setAllChecked] = useState(false);
   const allCheckedRef = useRef();
   const { data } = useInvoicesData();
-  
+
   useEffect(() => {
     resetCount();
-    
   }, []);
   useEffect(() => {
-    console.log(data)
-  },[data])
-  
+    console.log(data);
+  }, [data]);
+
   function checkAll(value) {
     setAllChecked(value);
   }
@@ -44,22 +42,25 @@ function InvoicesTable() {
         ref={allCheckedRef}
       ></InvoicesTableHeader>
       <div id="invoice-entries">
-        {data?.map((invoice, index) => {
-          return (
-            <Invoice
-              key={index + checkAll.toString()}
-              delay={index}
-              client={data[index].client}
-              id={data[index].id}
-              setAllCheckedOff={setAllCheckOff}
-              checked={allChecked}
-              amount={data[index].amount}
-              status={data[index].status}
-            ></Invoice>
-          );
-        })}
+        <AnimatePresence>
+          <LayoutGroup>
+            {data?.map((invoice, index) => {
+              return (
+                <Invoice
+                  key={index + checkAll.toString()}
+                  delay={index}
+                  client={data[index].client}
+                  id={data[index].id}
+                  setAllCheckedOff={setAllCheckOff}
+                  checked={allChecked}
+                  amount={data[index].amount}
+                  status={data[index].status}
+                ></Invoice>
+              );
+            })}
+          </LayoutGroup>
+        </AnimatePresence>
       </div>
-      
     </motion.div>
   );
 }
