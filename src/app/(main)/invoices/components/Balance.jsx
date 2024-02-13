@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Amount from "./cards/Amount";
 import ThisWeekInfo from "./cards/ThisWeekInfo";
 function Balance() {
-  const {balance} = useInvoicesData();
+  const {balance, thisweek} = useInvoicesData();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.7}}
@@ -14,8 +14,8 @@ function Balance() {
       transition={{ duration: 1.1, delay: 0.1, ease: "anticipate", type: "tween" }}
       className="invoices-card"
     >
-      <Amount title="Received" amount={(balance).toString()} ></Amount>
-      <ThisWeekInfo amount={(95.46).toString()} ></ThisWeekInfo>
+      <Amount title="Received" amount={balance} ></Amount>
+      <ThisWeekInfo amount={thisweek} ></ThisWeekInfo>
     </motion.div>
   );
 }

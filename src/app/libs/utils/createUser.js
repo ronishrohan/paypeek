@@ -8,13 +8,6 @@ export async function createUser(data) {
       name: data.name,
       email: data.email,
       invoices: [
-        {
-          id: "test",
-          client: "test",
-          amount: 22.5,
-          status: 1,
-          date: new Date(),
-        },
       ],
     });
   }

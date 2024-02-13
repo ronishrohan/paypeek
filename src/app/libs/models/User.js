@@ -13,11 +13,11 @@ const UserSchema = new mongoose.Schema({
     ]
 })
 
-let UserModel;
+let User;
 try {
-    UserModel = mongoose.model('User');
+    User = mongoose.model('User');
   } catch (error) {
-    UserModel = mongoose.model('User', UserSchema);
+    User = mongoose.model('User', UserSchema);
   }
 
-export default UserModel;
+export default User;

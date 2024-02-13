@@ -7,7 +7,7 @@ function ThisWeekInfo({ amount }) {
     month: date.getMonth() + 1,
     day: date.getDate(),
   };
-  const split = amount.split(".");
+  const split = amount.toString().split(".");
   const left = split[0];
   const right = split[1];
   return (
@@ -16,8 +16,8 @@ function ThisWeekInfo({ amount }) {
       <div id="week-amount-container">
         <div id="week-title">This week</div>
         <div id="week-amount">
-          <span>{`\$${left}`}</span>
-          <span id="week-amount-dimmed">{`.${right}`}</span>
+          <span>{`\$${left ? left : 0}`}</span>
+          <span id="week-amount-dimmed">{`.${right ? right: 0}`}</span>
         </div>
       </div>
     </div>

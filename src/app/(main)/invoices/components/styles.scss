@@ -198,7 +198,7 @@
     
   }
   #invoices-table {
-    
+    padding-bottom: 50px;
     overflow-y: scroll;
     height: 100%;
     width: 100%;
@@ -213,6 +213,7 @@
         }
       }
       #invoices-entry {
+        cursor: pointer;
         border: 1px solid transparent;
         z-index: 1;
         padding: 15px;
@@ -220,7 +221,7 @@
         box-sizing: border-box;
         display: grid;
         width: 100%;
-        grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
+        grid-template-columns: 1fr 6fr 6fr 4fr 6fr;
         gap: 20px;
         transition: background 200ms ease-in, border 200ms;
         border-radius: 16px;
@@ -232,19 +233,37 @@
         #status-button-container{
           .status-button{
             position: absolute;
-            border: 1px solid var(--card-border);
+            border: none;
             background-color: transparent;
             color: var(--text-bright);
             border-radius: 24px;
             padding-block: 5px;
             width: 80px;
+            height: 35px;
             cursor: pointer;
-            transition: background 200ms;
+            transition: background 200ms, border 100ms;
+            border: 1px solid var(--text-dim-more);
+            &:hover{
+              border: 1px solid var(--text-bright);
+            }
+            
           }
           .paid-button{
             background-color:  rgb(58, 139, 58) ;
             &:hover{
-              background-color: rgb(51, 95, 51) ;
+              background-color: rgb(89, 161, 89) ;
+            }
+          }
+          .pending-button{
+            background-color: var(--accent);
+            &:hover{
+              background-color: rgb(238, 75, 75);
+            }
+          }
+          .on-hold-button{
+            background-color: #383838;
+            &:hover{
+              background-color: #525252 ;
             }
           }
         }
@@ -276,7 +295,7 @@
       
       display: grid;
       width: 100%;
-      grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
+      grid-template-columns: 1fr 6fr 6fr 4fr 6fr;
       gap: 20px;
       position: sticky;
       top: 0;

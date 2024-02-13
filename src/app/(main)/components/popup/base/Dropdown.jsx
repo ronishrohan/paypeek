@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 const states = ["Pending", "Paid", "On Hold"];
 
-function Dropdown() {
+function Dropdown({handleChange}) {
   let [state, setState] = useState(0);
   function updateState() {
+    handleChange()
     setState((prev) => {
       if (prev === 2) {
         return 0;

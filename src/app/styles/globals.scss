@@ -131,6 +131,29 @@ body {
       font-size: 24px;
       font-weight: 1000;
       color: var(--text-dim-more);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      #popup-close-button{
+        color: var(--text-dim-more);
+        border: 1px solid var(--card-border);
+        background-color: transparent;
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: 200ms background, 200ms border, color 200ms;
+        font-size: 16px;
+        &:hover{
+          background-color: #471616;
+          color: #ff7c7c;
+          border-color: #7e3737;
+        }
+      }
     }
     #popup-form {
       height: 100%;
@@ -272,4 +295,11 @@ body {
 }
 .on-hold{
   background-color: #2c2c2c;
+}
+
+.spinning{
+            
+  svg{
+      animation: rotate 0.5s infinite linear;
+  }
 }

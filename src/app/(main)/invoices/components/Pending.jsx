@@ -3,7 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Amount from "./cards/Amount";
 import PendingButtons from "./cards/PendingButtons";
+import { useInvoicesData } from "../store/InvoicesDataProvider";
 function Pending() {
+  const {pending} = useInvoicesData();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.6}}
@@ -11,7 +13,7 @@ function Pending() {
       transition={{ duration: 1.4, ease: "anticipate", type: "tween" }}
       className="invoices-card"
     >
-      <Amount title="Pending" amount={"284.52"} ></Amount>
+      <Amount title="Pending" amount={pending} ></Amount>
       <PendingButtons></PendingButtons>
     </motion.div>
   );

@@ -2,7 +2,6 @@
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React, { useEffect, useRef, useState } from "react";
-
 const states = ["Pending", "Paid", "On Hold"]
 
 function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status }) {
@@ -31,18 +30,17 @@ function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status })
   return (
     <div
       id="invoices-entry"
-      style={{cursor: count>0 ? "pointer" : "default"}}
       className={isChecked ? "invoice-entry-active" : ""}
       onClick={() => {
-        if(count> 0){
           handleClick()
-        }
+        
       }}
     >
       <input
+        readOnly
         ref={checkref}
         checked={isChecked}
-        onChange={(e) => {
+        onClick={(e) => {
           e.stopPropagation();
           handleClick();
         }}

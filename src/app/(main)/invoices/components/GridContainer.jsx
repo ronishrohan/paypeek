@@ -2,7 +2,6 @@ import Balance from "./Balance";
 import Invoices from "./Invoices";
 import Pending from "./Pending";
 import { getInvoices } from "./lib/getInvoices";
-import Test from "./invoices/test";
 async function GridContainer() {
   const data = await getInvoices()
   const serialized = JSON.stringify(data)
