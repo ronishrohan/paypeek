@@ -4,6 +4,9 @@ import Pending from "./Pending";
 import { getInvoices } from "./lib/getInvoices";
 import Test from "./invoices/test";
 async function GridContainer() {
+  const data = await getInvoices()
+  const serialized = JSON.stringify(data)
+  
   return (
     <>
       <div id="invoices-grid-container">
@@ -11,8 +14,7 @@ async function GridContainer() {
           <Balance></Balance>
           <Pending></Pending>
         </div>
-        <Invoices>
-          <Test></Test>
+        <Invoices serializedData={serialized} >
         </Invoices>
       </div>
     </>

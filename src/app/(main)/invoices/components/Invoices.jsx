@@ -1,10 +1,17 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import InvoicesHeader from "./invoices/InvoicesHeader";
 import { motion } from "framer-motion";
 import InvoicesTable from "./invoices/InvoicesTable";
+import { useInvoicesData } from "../store/InvoicesDataProvider";
 
-function Invoices({ children }) {
+function Invoices({ serializedData,children }) {
+  const {updateData} = useInvoicesData();
+  useEffect(() => {
+    const data = JSON.parse(serializedData)
+    updateData(data)
+    
+  },[serializedData])
   return (
     <>
     {children}
