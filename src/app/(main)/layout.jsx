@@ -20,12 +20,15 @@ export default async function RootLayout({ children }) {
   const session = await getServerSession();
   if(session == null){
     redirect("/login")
+    return null;
   }
   else{
     await createUser({name: session.user.name, email: session.user.email})
   }
-  return <Providers>
+  return <>
+  <Providers>
+    
     <InvoicePopupWrapper></InvoicePopupWrapper>
     <GridContainer>{children}</GridContainer>
-  </Providers>;
+  </Providers>;</>
 }

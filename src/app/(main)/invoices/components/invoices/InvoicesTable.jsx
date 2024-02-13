@@ -6,7 +6,6 @@ import Invoice from "./Invoice";
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 import { useInvoicesData } from "../../store/InvoicesDataProvider";
 
-
 function InvoicesTable() {
   const { resetCount } = useSelectedContext();
   const [allChecked, setAllChecked] = useState(false);
@@ -59,6 +58,7 @@ function InvoicesTable() {
           );
         })}
       </div>
+      
     </motion.div>
   );
 }

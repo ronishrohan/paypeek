@@ -1,9 +1,9 @@
-import { connect } from "mongoose";
+import mongoose from "mongoose";
 
 
 export async function connectDatabase(){
     try{
-        await connect(process.env.MONGODB_DATABASE)
+        await mongoose.connect(process.env.MONGODB_DATABASE)
     }
     catch(e){
         console.log(e);

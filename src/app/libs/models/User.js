@@ -13,4 +13,11 @@ const UserSchema = new mongoose.Schema({
     ]
 })
 
-export default mongoose.models.User || mongoose.model("User", UserSchema);
+let UserModel;
+try {
+    UserModel = mongoose.model('User');
+  } catch (error) {
+    UserModel = mongoose.model('User', UserSchema);
+  }
+
+export default UserModel;
