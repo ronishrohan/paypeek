@@ -3,6 +3,7 @@ import User from "@/app/libs/models/User";
 import { getServerSession } from "next-auth";
 
 export async function getInvoices() {
+    await new Promise(res => setTimeout(res, 5000))
   const session = await getServerSession();
   await connectDatabase();
   const user = await User.findOne({
