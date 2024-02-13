@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import Popup from "./base/Popup";
 import Dropdown from "./base/Dropdown";
 import { icons } from "@/app/utils/icons";
@@ -12,9 +12,8 @@ function PopupInvoice() {
   const clientRef = useRef();
   const idRef = useRef();
   const amountRef = useRef();
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+  const [pending, startTransition] = useTransition();
+
   function handleStateChange() {
     setState((prev) => {
       if (prev === 2) {
@@ -26,13 +25,16 @@ function PopupInvoice() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    const data = {
-      id: idRef.current.value,
-      client: clientRef.current.value,
-      amount: amountRef.current.value,
-    }
-    createInvoice(data, state);
-    handleClose();
+    startTransition(async () => {
+      const data = {
+        id: idRef.current.value,
+        client: clientRef.current.value,
+        amount: amountRef.current.value,
+      };
+      await createInvoice(data, state);
+      handleClose();
+    });
+    
   }
 
   return (
@@ -76,9 +78,15 @@ function PopupInvoice() {
           </div>
         </div>
         <div id="popup-submit-container">
-          <button id="popup-submit">
-            <span id="popup-submit-text">Create</span>
-            <div id="popup-submit-icon">{icons.rightarrow}</div>
+          <button disabled={pending} id="popup-submit">
+            {pending ? (
+              <span className="spinning">{icons.loading}</span>
+            ) : (
+              <>
+                <span id="popup-submit-text">Create</span>
+                <div id="popup-submit-icon">{icons.rightarrow}</div>
+              </>
+            )}
           </button>
         </div>
       </form>

@@ -181,6 +181,13 @@ body {
           align-items: center;
           cursor: pointer;
           transition: border 200ms ;
+          &:disabled{
+            border: 1px solid #b6b6b6;
+            cursor: not-allowed;
+            color: var(--text-bright);
+            background-color: #aa3c3e;
+            
+          }
           #popup-submit-icon{
             position: absolute;
             opacity: 0;
