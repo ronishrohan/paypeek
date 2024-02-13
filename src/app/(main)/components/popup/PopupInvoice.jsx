@@ -6,6 +6,7 @@ import { icons } from "@/app/utils/icons";
 import { createInvoice } from "./utils/createInvoice";
 import { useInvoicePopup } from "./InvoicePopupWrapper";
 
+
 function PopupInvoice() {
   const { handleClose } = useInvoicePopup();
   const [state, setState] = useState(0);
@@ -32,9 +33,9 @@ function PopupInvoice() {
         amount: amountRef.current.value,
       };
       await createInvoice(data, state);
+
       handleClose();
     });
-    
   }
 
   return (
