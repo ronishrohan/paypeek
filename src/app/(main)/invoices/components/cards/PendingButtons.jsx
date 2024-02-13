@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useSelectedContext } from "../../store/SelectedContextProvider";
+import Link from "next/link"
 
 import React from "react";
 
@@ -53,7 +54,7 @@ function PendingButtons() {
         }}
         id="pending-go"
       >
-        <span>GO</span>
+        <Link href="/invoices/?pending=true" id="pending-go-button" >GO</Link>
         {arrow}
       </motion.button>
     </div>

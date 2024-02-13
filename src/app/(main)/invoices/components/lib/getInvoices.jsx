@@ -2,7 +2,7 @@ import { connectDatabase } from "@/app/libs/mongodb";
 import User from "@/app/libs/models/User";
 import { getServerSession } from "next-auth";
 
-export async function getInvoices() {
+export async function getInvoices(query) {
   const session = await getServerSession();
   await connectDatabase();
   const user = await User.findOne({
@@ -12,6 +12,10 @@ export async function getInvoices() {
 
   if (user) {
     const invoices = user.invoices;
+    if(query=="pending"){
+      const transformed = invoices.filter((invoice, index) => invoice.status===0)
+      return transformed;
+    }
     return invoices;
   }
   else{

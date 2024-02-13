@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket, faBriefcase, faWallet, faStickyNote, faSquareArrowUpRight, faCircleNotch, faTrashCan, faArrowRightLong, faXmark, faGhost } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faBriefcase, faWallet, faStickyNote, faSquareArrowUpRight, faCircleNotch, faTrashCan, faArrowRightLong, faXmark, faGhost, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faGithub, faGoogle, faReddit } from "@fortawesome/free-brands-svg-icons";
 import { faIndianRupeeSign, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import loading from "../loading";
