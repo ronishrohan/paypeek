@@ -143,7 +143,7 @@
     font-weight: 800;
     height: 45px;
 
-    #header-dustbin{
+    #header-dustbin {
       height: 40px;
       width: 40px;
       display: flex;
@@ -157,7 +157,7 @@
       color: var(--text-dim-more);
       cursor: pointer;
       transition: border 100ms, background 100ms, color 100ms;
-      &:hover{
+      &:hover {
         color: #ff7c7c;
         background-color: #471616;
         border-color: #7e3737;
@@ -180,13 +180,13 @@
       &:hover {
         border: 1px solid var(--accent);
       }
-      &:active{
+      &:active {
         border-color: var(--text-bright);
       }
     }
   }
-  &:before{
-    content: ' ';
+  &:before {
+    content: " ";
     position: fixed;
     width: calc(100% - 40px);
     height: 80px;
@@ -195,7 +195,6 @@
     margin-bottom: 20px;
     z-index: 2;
     pointer-events: none;
-    
   }
   #invoices-table {
     padding-bottom: 50px;
@@ -204,12 +203,11 @@
     width: 100%;
     scrollbar-width: thin !important;
     #invoice-entries {
-      
-      .invoice-entry-active{
+      .invoice-entry-active {
         background-color: #2e2e2e;
         border: 1px solid #444444 !important;
-        &:hover{
-          background-color: #3a3a3a !important; 
+        &:hover {
+          background-color: #3a3a3a !important;
         }
       }
       #invoices-entry {
@@ -221,17 +219,17 @@
         box-sizing: border-box;
         display: grid;
         width: 100%;
-        grid-template-columns: 1fr 6fr 6fr 4fr 6fr;
+        grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
         gap: 20px;
         transition: background 200ms ease-in, border 200ms;
         border-radius: 16px;
         margin-bottom: 4px;
-        &:hover{
+        &:hover {
           background-color: #252525;
         }
-        
-        #status-button-container{
-          .status-button{
+
+        #status-button-container {
+          .status-button {
             position: absolute;
             border: none;
             background-color: transparent;
@@ -242,32 +240,33 @@
             height: 35px;
             cursor: pointer;
             transition: background 200ms, border 100ms;
-            border: 1px solid var(--text-dim-more);
-            &:hover{
+            
+            &:hover {
               border: 1px solid var(--text-bright);
             }
-            
           }
-          .paid-button{
-            background-color:  rgb(58, 139, 58) ;
-            &:hover{
-              background-color: rgb(89, 161, 89) ;
+          .paid-button {
+            background-color: rgb(58, 139, 58);
+            border: 1px solid rgb(238, 75, 75) ;
+            &:hover {
+              background-color: rgb(89, 161, 89);
             }
           }
-          .pending-button{
+          .pending-button {
             background-color: var(--accent);
-            &:hover{
+            border: 1px solid rgb(238, 75, 75) ;
+            &:hover {
               background-color: rgb(238, 75, 75);
             }
           }
-          .on-hold-button{
+          .on-hold-button {
             background-color: #383838;
-            &:hover{
-              background-color: #525252 ;
+            border: 1px solid rgb(238, 75, 75) ;
+            &:hover {
+              background-color: #525252;
             }
           }
         }
-
 
         .invoices-column-entry {
           font-size: 15px;
@@ -286,16 +285,15 @@
     }
 
     #invoices-table-header {
-      
       padding: 15px;
       box-sizing: border-box;
       z-index: 2;
       background-color: #1b1b1b;
       margin-bottom: 15px;
-      
+
       display: grid;
       width: 100%;
-      grid-template-columns: 1fr 6fr 6fr 4fr 6fr;
+      grid-template-columns: 1fr 6fr 6fr 4fr 4fr;
       gap: 20px;
       position: sticky;
       top: 0;
@@ -335,5 +333,39 @@
   }
   &:checked {
     background-color: var(--accent);
+  }
+}
+
+#empty-invoices {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  #empty-invoices-icon{
+    z-index: 1;
+    position: absolute;
+    font-size: 150px;
+    opacity: 0.1;
+  }
+  #empty-invoices-text {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+
+    #empty-create-text {
+      padding: 5px;
+      
+      cursor: pointer;
+      color: var(--accent);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

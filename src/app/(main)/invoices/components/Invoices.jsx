@@ -4,15 +4,19 @@ import InvoicesHeader from "./invoices/InvoicesHeader";
 import { motion } from "framer-motion";
 import InvoicesTable from "./invoices/InvoicesTable";
 import { useInvoicesData } from "../store/InvoicesDataProvider";
+import { useInvoicePopup } from "../../components/popup/InvoicePopupWrapper";
+import { icons } from "@/app/utils/icons";
 
-function Invoices({ serializedData }) {
-  const {updateData} = useInvoicesData();
+function Invoices({ serializedData, children }) {
+  const {handleOpen} = useInvoicePopup();
+  const { updateData } = useInvoicesData();
   useEffect(() => {
-    const data = JSON.parse(serializedData)
-    updateData(data)
-  },[serializedData])
+    const data = JSON.parse(serializedData);
+    updateData(data);
+  }, [serializedData]);
   return (
     <>
+      {children}
       <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -21,7 +25,17 @@ function Invoices({ serializedData }) {
         className="invoices-card"
       >
         <InvoicesHeader></InvoicesHeader>
-        <InvoicesTable></InvoicesTable>
+        {serializedData != "[]" ? (
+          <InvoicesTable></InvoicesTable>
+        ) : (
+          <div id="empty-invoices">
+            <div id="empty-invoices-icon" >{icons.ghost}</div>
+            <div id="empty-invoices-text">
+              you havent created any invoices yet,
+              <span onClick={handleOpen} id="empty-create-text">create one now</span>
+            </div>
+          </div>
+        )}
       </motion.div>
     </>
   );
