@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 import Link from "next/link"
 
-import React from "react";
-
+import React, { useState } from "react";
+import { icons } from "@/app/utils/icons";
 const arrow = (
   <svg viewBox="0 0 49 30" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -28,6 +28,7 @@ const arrow = (
 );
 
 function PendingButtons({pending}) {
+  const [loading,setLoading] = useState(false);
   return (
     <div id="pending-buttons-container">
       <motion.button
@@ -54,7 +55,9 @@ function PendingButtons({pending}) {
         }}
         id="pending-go"
       >
-        <Link href="/invoices/?pending=true" id="pending-go-button" >GO</Link>
+        <Link href="/invoices/?pending=true" onClick={() => setLoading(true)} id="pending-go-button" >
+          {loading ? <div className="spinning" >{icons.loading}</div> : <div>GO</div>}
+        </Link>
         {arrow}
       </motion.button>
     </div>
