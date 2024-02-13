@@ -180,6 +180,9 @@
       &:hover {
         border: 1px solid var(--accent);
       }
+      &:active{
+        border-color: var(--text-bright);
+      }
     }
   }
   &:before{
@@ -239,9 +242,9 @@
             transition: background 200ms;
           }
           .paid-button{
-            background-color: rgb(65, 126, 65);
+            background-color:  rgb(58, 139, 58) ;
             &:hover{
-              background-color: rgb(51, 95, 51) 
+              background-color: rgb(51, 95, 51) ;
             }
           }
         }
