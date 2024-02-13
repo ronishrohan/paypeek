@@ -3,10 +3,12 @@ import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React, { useEffect, useRef, useState } from "react";
 
-function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status }) {
-  const { updateCount } = useSelectedContext();
-  let [isChecked, setChecked] = useState(false);
+const states = ["Pending", "Paid", "On Hold"]
 
+function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status }) {
+  const { updateCount, count } = useSelectedContext();
+  let [isChecked, setChecked] = useState(false);
+  
   useEffect(() => {
     setChecked(checked);
   }, [checked]);
@@ -14,31 +16,34 @@ function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status })
     if(isChecked){
       updateCount(id, 1)
     }
-    else{
+    else if(count > 0){
       updateCount(id, -1)
     }
   }, [isChecked])
   function handleClick() {
     setAllCheckedOff();
-    setChecked((prev) => !prev);
+    setChecked((prev) => {
+      return !prev;
+    });
     
   }
   let checkref = useRef();
   return (
     <div
       id="invoices-entry"
+      style={{cursor: count>0 ? "pointer" : "default"}}
       className={isChecked ? "invoice-entry-active" : ""}
       onClick={() => {
-        handleClick();
+        if(count> 0){
+          handleClick()
+        }
       }}
     >
       <input
         ref={checkref}
         checked={isChecked}
-        onChange={() => {
-          handleClick();
-        }}
-        onClick={() => {
+        onChange={(e) => {
+          e.stopPropagation();
           handleClick();
         }}
         id="invoices-table-checkbox"
@@ -53,7 +58,9 @@ function Invoice({ id,client, amount, checked, setAllCheckedOff, delay,status })
       <div className="invoices-column-entry" id="invoices-table-right">
         ${amount}
       </div>
-      <div className="invoices-column-entry">{status}</div>
+      <div id="status-button-container" className="invoices-column-entry" >
+        <button onClick={(e) => e.stopPropagation()} className={` status-button ${states[status].toLowerCase().replace(" ", "-")}-button`} >{states[status]}</button>
+      </div>
     </div>
   );
 }

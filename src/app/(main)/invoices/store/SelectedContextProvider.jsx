@@ -15,6 +15,7 @@ export function SelectedContextProvider({ children }) {
     setCount(0)
   }
   
+  
   return <SelectedContext.Provider value={{updateCount, resetCount, count}} >{children}</SelectedContext.Provider>;
 }
 
