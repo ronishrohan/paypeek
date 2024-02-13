@@ -27,7 +27,7 @@ const arrow = (
   </svg>
 );
 
-function PendingButtons() {
+function PendingButtons({pending}) {
   return (
     <div id="pending-buttons-container">
       <motion.button
@@ -41,7 +41,7 @@ function PendingButtons() {
         }}
         id="pending-button"
       >
-        8
+        {pending}
       </motion.button>
       <motion.button
         initial={{ scale: 0.8, opacity: 0 }}

@@ -5,7 +5,7 @@ import Amount from "./cards/Amount";
 import PendingButtons from "./cards/PendingButtons";
 import { useInvoicesData } from "../store/InvoicesDataProvider";
 function Pending() {
-  const {pending} = useInvoicesData();
+  const {pendingCount, pending} = useInvoicesData();
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.6}}
@@ -14,7 +14,7 @@ function Pending() {
       className="invoices-card"
     >
       <Amount title="Pending" amount={pending} ></Amount>
-      <PendingButtons></PendingButtons>
+      <PendingButtons pending={pendingCount} ></PendingButtons>
     </motion.div>
   );
 }

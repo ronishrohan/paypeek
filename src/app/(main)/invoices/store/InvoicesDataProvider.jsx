@@ -10,6 +10,7 @@ export function InvoicesDataProvider({ children }) {
   const [balance, setBalance] = useState(0.0);
   const [thisweek, setThisweek] = useState(0.0);
   const [pending, setPending] = useState(0.0)
+  const [pendingCount, setPendingCount] = useState(0);
   function updateData(invoices) {
     setData(invoices);
   }
@@ -17,6 +18,7 @@ export function InvoicesDataProvider({ children }) {
     let calcBalance = 0;
     let calcThisweek = 0;
     let calcPending = 0;
+    let calcPendingCount = 0;
     if(data){
       data.map(invoice => {
         if(invoice.status == 1){
@@ -27,16 +29,18 @@ export function InvoicesDataProvider({ children }) {
         }
         if(invoice.status == 0){
           calcPending += invoice.amount;
+          calcPendingCount += 1;
 
         }
       });
       setBalance(calcBalance);
       setThisweek(calcThisweek);
-      setPending(calcPending)
+      setPending(calcPending);
+      setPendingCount(calcPendingCount);
     }
   }, [data])
   return (
-    <InvoiceData.Provider value={{data,balance,thisweek,pending, updateData}}>
+    <InvoiceData.Provider value={{data,balance,thisweek,pending,pendingCount, updateData}}>
       {children}
     </InvoiceData.Provider>
   );

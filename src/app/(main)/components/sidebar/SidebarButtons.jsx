@@ -5,14 +5,15 @@ import SidebarButton from "./SidebarButton";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { useInvoicePopup } from "../popup/InvoicePopupWrapper";
-
+import { useInvoicesData } from "../../invoices/store/InvoicesDataProvider";
 function SidebarButtons() {
+  const {pendingCount} = useInvoicesData();
   const {handleOpen} = useInvoicePopup();
   const pathname = usePathname().substring(1);
   return (
     <div id="sidebar-buttons-container">
       <SidebarLink icon="invoices" title="Invoices">
-        <div id="invoices-pending">8</div>
+        {pendingCount>0 && <div id="invoices-pending">{pendingCount}</div>}
       </SidebarLink>
       <SidebarLink icon="transactions" title="Transactions"></SidebarLink>
       <SidebarButton
