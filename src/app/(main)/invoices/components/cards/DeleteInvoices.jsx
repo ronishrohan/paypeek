@@ -17,6 +17,7 @@ function DeleteInvoices({variants}) {
     }
   return (
     <motion.button
+    disabled={pending}
     onClick={handleClick}
       variants={variants}
       initial="close"

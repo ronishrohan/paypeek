@@ -10,6 +10,7 @@ function ChangeStatus({ status, id }) {
   const [pending, startTransition] = useTransition();
   return (
     <button
+      disabled={pending}
       onClick={(e) => {
         e.stopPropagation();
         startTransition(async () => {

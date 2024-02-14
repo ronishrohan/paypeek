@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 function ThisWeekInfo({ amount }) {
   const date = new Date();
   const date_info = {
@@ -15,10 +16,16 @@ function ThisWeekInfo({ amount }) {
       <div id="date">{`${date_info.day}/${date_info.month}/${date_info.year}`}</div>
       <div id="week-amount-container">
         <div id="week-title">This week</div>
-        <div id="week-amount">
+        <motion.div
+          key={amount}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          id="week-amount"
+        >
           <span>{`\$${left ? left : 0}`}</span>
-          <span id="week-amount-dimmed">{`.${right ? right: 0}`}</span>
-        </div>
+          <span id="week-amount-dimmed">{`.${right ? right : 0}`}</span>
+        </motion.div>
       </div>
     </div>
   );
