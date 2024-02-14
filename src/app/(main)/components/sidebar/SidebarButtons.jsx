@@ -13,7 +13,7 @@ function SidebarButtons() {
   return (
     <div id="sidebar-buttons-container">
       <SidebarLink icon="invoices" title="Invoices">
-        {pendingCount>0 && <div id="invoices-pending">{pendingCount}</div>}
+        {pendingCount>0 && <div id="invoices-pending"><span>{pendingCount}</span></div>}
       </SidebarLink>
       <SidebarLink icon="transactions" title="Transactions"></SidebarLink>
       <SidebarButton

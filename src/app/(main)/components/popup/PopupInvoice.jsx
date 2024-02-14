@@ -85,7 +85,6 @@ function PopupInvoice() {
             ) : (
               <>
                 <span id="popup-submit-text">Create</span>
-                <div id="popup-submit-icon">{icons.rightarrow}</div>
               </>
             )}
           </button>

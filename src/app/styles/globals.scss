@@ -182,30 +182,12 @@ body {
             background-color: #aa3c3e;
             
           }
-          #popup-submit-icon{
-            position: absolute;
-            opacity: 0;
-            font-size: 20px;
-            translate: -20px 0px;
-            transition: opacity 200ms, translate 200ms;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            pointer-events: none;
-          }
+          
           #popup-submit-text{
             transition: opacity 200ms;
           }
           &:hover{
-            #popup-submit-text{
-              opacity: 0;
-            }
-            #popup-submit-icon{
-              opacity: 1;
-              translate: 0px 0px ;
-            }
+            
             border: 1px solid #b6b6b6;
           
           }

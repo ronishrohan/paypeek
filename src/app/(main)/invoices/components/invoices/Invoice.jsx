@@ -2,8 +2,9 @@
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 
 import React, { useEffect, useRef, useState } from "react";
-const states = ["Pending", "Paid", "On Hold"];
+
 import { motion } from "framer-motion";
+import ChangeStatus from "../cards/ChangeStatus";
 
 function Invoice({
   id,
@@ -76,14 +77,7 @@ function Invoice({
         ${amount}
       </div>
       <div id="status-button-container" className="invoices-column-entry">
-        <button
-          onClick={(e) => e.stopPropagation()}
-          className={` status-button ${states[status]
-            .toLowerCase()
-            .replace(" ", "-")}-button`}
-        >
-          {states[status]}
-        </button>
+        <ChangeStatus status={status} id={itemId} ></ChangeStatus>
       </div>
     </motion.div>
   );
