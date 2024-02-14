@@ -7,8 +7,7 @@ import { signIn } from "next-auth/react";
 function Button({ children }) {
   let [loading, setLoading] = useState(false);
 
-
-  function handleLogin(){
+  function handleLogin() {
     signIn(children.toLowerCase(), { callbackUrl: "/home" });
   }
   return (

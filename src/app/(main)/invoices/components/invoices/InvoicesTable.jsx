@@ -15,9 +15,6 @@ function InvoicesTable() {
   useEffect(() => {
     resetCount();
   }, []);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   function checkAll(value) {
     setAllChecked(value);
@@ -55,6 +52,7 @@ function InvoicesTable() {
                   checked={allChecked}
                   amount={data[index].amount}
                   status={data[index].status}
+                  itemId={data[index]._id}
                 ></Invoice>
               );
             })}

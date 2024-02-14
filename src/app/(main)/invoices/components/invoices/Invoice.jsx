@@ -13,8 +13,9 @@ function Invoice({
   setAllCheckedOff,
   delay,
   status,
+  itemId,
 }) {
-  const { updateCount, count } = useSelectedContext();
+  const { count, updateSelected } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -22,9 +23,9 @@ function Invoice({
   }, [checked]);
   useEffect(() => {
     if (isChecked) {
-      updateCount(id, 1);
+      updateSelected(itemId, 1);
     } else if (count > 0) {
-      updateCount(id, -1);
+      updateSelected(itemId, -1);
     }
   }, [isChecked]);
   function handleClick() {
@@ -38,12 +39,12 @@ function Invoice({
     <motion.div
       layout
       id="invoices-entry"
-      initial={{opacity: 0, y: 10}}
-      animate={{opacity: 1, y: 0}}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.6,
         type: "tween",
-        ease: "anticipate"
+        ease: "anticipate",
       }}
       className={isChecked ? "invoice-entry-active" : ""}
       onClick={() => {

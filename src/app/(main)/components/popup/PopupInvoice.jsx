@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useTransition } from "react";
 import Popup from "./base/Popup";
 import Dropdown from "./base/Dropdown";
 import { icons } from "@/app/utils/icons";
-import { createInvoice } from "./utils/createInvoice";
+import { createInvoice } from "../../utils/createInvoice";
 import { useInvoicePopup } from "./InvoicePopupWrapper";
 
 

@@ -4,6 +4,7 @@ import React from "react";
 import { useSelectedContext } from "../../store/SelectedContextProvider";
 import { icons } from "@/app/utils/icons";
 import { useInvoicePopup } from "@/app/(main)/components/popup/InvoicePopupWrapper";
+import DeleteInvoices from "../cards/DeleteInvoices";
 
 const variants = {
   open: {
@@ -27,24 +28,10 @@ function InvoicesHeader() {
       <div>Invoices</div>
       <AnimatePresence mode="wait">
         {count > 0 ? (
-          <motion.div
-            variants={variants}
-            initial="close"
-            animate="open"
-            exit="close"
-            transition={{
-              type: "tween",
-              ease: "anticipate",
-              duration: 0.5,
-            }}
-            id="header-dustbin"
-            key="test"
-          >
-            {icons.remove}
-          </motion.div>
+          <DeleteInvoices variants={variants} ></DeleteInvoices>
         ) : (
           <motion.button
-            key="test2"
+            key="invioce-open"
             variants={variants}
             initial={{
               opacity: 0,

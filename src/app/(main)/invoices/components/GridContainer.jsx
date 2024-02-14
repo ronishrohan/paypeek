@@ -5,10 +5,10 @@ import PendingInfo from "./PendingInfo";
 import { getInvoices } from "./lib/getInvoices";
 import PendingBack from "./cards/PendingBack";
 async function GridContainer({ pending }) {
-  const data = await getInvoices();
-  const dataPending = await getInvoices("pending");
+  const data = await getInvoices(pending? "pending" : null);
+  
   const serialized = JSON.stringify(data);
-  const serializedPending = JSON.stringify(dataPending);
+  
 
   return (
     <>
@@ -19,7 +19,7 @@ async function GridContainer({ pending }) {
               <PendingInfo></PendingInfo>
               <PendingBack></PendingBack>
             </div>
-            <Invoices  key="pending" serializedData={serializedPending}></Invoices>
+            <Invoices  key="pending" serializedData={serialized}></Invoices>
           </>
         ) : (
           <>
