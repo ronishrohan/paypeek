@@ -7,15 +7,10 @@ import { useSelectedContext } from "../../store/SelectedContextProvider";
 import { useInvoicesData } from "../../store/InvoicesDataProvider";
 
 function InvoicesTable() {
-  const { resetCount } = useSelectedContext();
+  const { resetCount, selected } = useSelectedContext();
   const [allChecked, setAllChecked] = useState(false);
   const allCheckedRef = useRef();
   const { data } = useInvoicesData();
-
-  useEffect(() => {
-    resetCount();
-  }, []);
-
   function checkAll(value) {
     setAllChecked(value);
   }

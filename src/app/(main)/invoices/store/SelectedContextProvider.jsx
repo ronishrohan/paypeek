@@ -9,9 +9,7 @@ const SelectedContext = createContext(null);
 export function SelectedContextProvider({ children }) {
   const [count, setCount] = useState(0);
   const [selected, setSelected] = useState([]);
-  function resetCount(){
-    setCount(0)
-  }
+
   function updateSelected(itemId, mode){
     if(mode == 1){
       setSelected([...selected, itemId])
@@ -29,7 +27,7 @@ export function SelectedContextProvider({ children }) {
   
   
   
-  return <SelectedContext.Provider value={{resetCount,updateSelected,resetSelected, count, selected}} >{children}</SelectedContext.Provider>;
+  return <SelectedContext.Provider value={{updateSelected,resetSelected, count, selected}} >{children}</SelectedContext.Provider>;
 }
 
 export function useSelectedContext(){

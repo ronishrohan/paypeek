@@ -12,7 +12,6 @@ export async function deleteInvoices(invoices){
     const user = await User.findOne({name: session.user.name, email: session.user.email})
     
     user.invoices = user.invoices.filter(invoice => {
-        console.log(invoices.includes(invoice._id.toString()))
         return !invoices.includes(invoice._id.toString())
     })
     

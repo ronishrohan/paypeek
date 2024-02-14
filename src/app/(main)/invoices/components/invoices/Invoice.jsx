@@ -15,12 +15,16 @@ function Invoice({
   status,
   itemId,
 }) {
-  const { count, updateSelected } = useSelectedContext();
+  const { count, updateSelected, selected } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
-
   useEffect(() => {
-    setChecked(checked);
-  }, [checked]);
+    setChecked(checked)
+  }, [checked])
+  useEffect(() => {
+    if(selected.length==0){
+      setChecked(false);
+    }
+  }, [selected])
   useEffect(() => {
     if (isChecked) {
       updateSelected(itemId, 1);
