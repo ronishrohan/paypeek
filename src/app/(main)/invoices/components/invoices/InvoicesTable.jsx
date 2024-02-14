@@ -54,6 +54,7 @@ function InvoicesTable() {
                   amount={data[index].amount}
                   status={data[index].status}
                   itemId={data[index]._id}
+                  date={data[index].date}
                 ></Invoice>
               );
             })}

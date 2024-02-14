@@ -25,6 +25,7 @@ const InvoicesTableHeader = forwardRef(function InvoicesTableHeader({ checkAll }
       <div className="invoices-column" id="invoices-table-left">
         CLIENT
       </div>
+      <div className="invoices-column" id="invoices-table-left" >CREATED</div>
       <div className="invoices-column" id="invoices-table-right">
         AMOUNT
       </div>

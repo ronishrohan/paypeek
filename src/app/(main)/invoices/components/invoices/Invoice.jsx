@@ -15,7 +15,9 @@ function Invoice({
   delay,
   status,
   itemId,
+  date,
 }) {
+  const created = new Date(date);
   const { count, updateSelected, selected } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
   useEffect(() => {
@@ -28,11 +30,11 @@ function Invoice({
   }, [selected]);
   useEffect(() => {
     if (isChecked) {
-      console.log(itemId)
-      console.log("plus")
+      console.log(itemId);
+      console.log("plus");
       updateSelected(itemId, 1);
     } else if (count > 0) {
-      console.log("minus")
+      console.log("minus");
       updateSelected(itemId, -1);
     }
   }, [isChecked]);
@@ -75,6 +77,9 @@ function Invoice({
       </div>
       <div className="invoices-column-entry" id="invoices-table-left">
         {client}
+      </div>
+      <div className="invoices-column-entry" id="invoices-table-left">
+        {`${created.getDate()}/${created.getMonth()}/${created.getFullYear()}`}
       </div>
       <div className="invoices-column-entry" id="invoices-table-right">
         ${amount}
