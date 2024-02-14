@@ -18,6 +18,12 @@ export function SelectedContextProvider({ children }) {
       setSelected(selected.filter(id => id!==itemId));
     }
   }
+  function changeSelected(items){
+    setSelected(items)
+  }
+  useEffect(() => {
+    console.log(selected)
+  }, [selected])
   function resetSelected(){
     setSelected([])
   }
@@ -27,7 +33,7 @@ export function SelectedContextProvider({ children }) {
   
   
   
-  return <SelectedContext.Provider value={{updateSelected,resetSelected, count, selected}} >{children}</SelectedContext.Provider>;
+  return <SelectedContext.Provider value={{changeSelected,updateSelected,resetSelected, count, selected}} >{children}</SelectedContext.Provider>;
 }
 
 export function useSelectedContext(){

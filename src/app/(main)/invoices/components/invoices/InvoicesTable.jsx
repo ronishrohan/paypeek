@@ -7,12 +7,18 @@ import { useSelectedContext } from "../../store/SelectedContextProvider";
 import { useInvoicesData } from "../../store/InvoicesDataProvider";
 
 function InvoicesTable() {
-  const { resetCount, selected } = useSelectedContext();
+  const { resetCount, selected, changeSelected } = useSelectedContext();
   const [allChecked, setAllChecked] = useState(false);
   const allCheckedRef = useRef();
   const { data } = useInvoicesData();
   function checkAll(value) {
     setAllChecked(value);
+    if(value){
+      changeSelected(data.map((invoice) => invoice._id.toString()))
+    }
+    else{
+      changeSelected([])
+    }
   }
   function setAllCheckOff() {
     allCheckedRef.current.checked = false;

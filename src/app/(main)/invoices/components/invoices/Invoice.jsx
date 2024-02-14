@@ -19,17 +19,20 @@ function Invoice({
   const { count, updateSelected, selected } = useSelectedContext();
   let [isChecked, setChecked] = useState(false);
   useEffect(() => {
-    setChecked(checked)
-  }, [checked])
+    setChecked(checked);
+  }, [checked]);
   useEffect(() => {
-    if(selected.length==0){
+    if (selected.length == 0) {
       setChecked(false);
     }
-  }, [selected])
+  }, [selected]);
   useEffect(() => {
     if (isChecked) {
+      console.log(itemId)
+      console.log("plus")
       updateSelected(itemId, 1);
     } else if (count > 0) {
+      console.log("minus")
       updateSelected(itemId, -1);
     }
   }, [isChecked]);
@@ -77,7 +80,7 @@ function Invoice({
         ${amount}
       </div>
       <div id="status-button-container" className="invoices-column-entry">
-        <ChangeStatus status={status} id={itemId} ></ChangeStatus>
+        <ChangeStatus status={status} id={itemId}></ChangeStatus>
       </div>
     </motion.div>
   );
