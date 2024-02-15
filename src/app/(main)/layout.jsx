@@ -30,5 +30,5 @@ export default async function RootLayout({ children }) {
     
     <InvoicePopupWrapper></InvoicePopupWrapper>
     <GridContainer>{children}</GridContainer>
-  </Providers>;</>
+  </Providers></>
 }
