@@ -35,6 +35,7 @@ function BurgerMenuContainer({ close }) {
         id="burger-menu-container"
       >
         <div id="burger-menu-links">
+            <BurgerMenuLink>Home</BurgerMenuLink>
           <BurgerMenuLink>Invoices</BurgerMenuLink>
           <BurgerMenuLink>Transactions</BurgerMenuLink>
           <BurgerMenuButton link="https://github.com/ronishrohan">
