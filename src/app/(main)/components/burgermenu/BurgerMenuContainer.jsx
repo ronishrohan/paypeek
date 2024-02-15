@@ -20,7 +20,7 @@ function BurgerMenuContainer({ close }) {
         exit={{
           opacity: 1,
           x: "100%",
-          borderRadius: "0%",
+          borderRadius: "50%",
           transition: {
             duration: 0.2,
             type: "tween",

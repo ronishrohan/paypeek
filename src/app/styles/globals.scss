@@ -339,6 +339,9 @@ body {
 
 
 #burger-menu-button{
+  @media (min-width: 900px) {
+    display: none;
+  }
   position: absolute;
   right: 0;
   top: 0;
@@ -360,6 +363,7 @@ body {
   background-color: #1616168a;
 }
 #burger-menu-container{
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
   position: absolute;
   height: 100%;
   background-color: var(--card-bg);
@@ -433,11 +437,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    .spinning{
+      font-size: 12px;
+    }
     #burger-menu-link{
+      min-height: 28px;
       color: var(--text-dim-more);
       text-decoration: none;
       font-size: 24px;
       display: flex;
+      justify-content: center;
       width: 100%;
       position: relative;
       flex-direction: column;
