@@ -78,7 +78,7 @@ function Invoice({
       <div className="invoices-column-entry" id="invoices-table-left">
         {client}
       </div>
-      <div className="invoices-column-entry" id="invoices-table-left">
+      <div className="invoices-column-entry hide" id="invoices-table-left">
         {`${created.getDate()}/${created.getMonth()}/${created.getFullYear()}`}
       </div>
       <div className="invoices-column-entry" id="invoices-table-right">
