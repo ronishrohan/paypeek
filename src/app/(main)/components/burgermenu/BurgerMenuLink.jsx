@@ -11,22 +11,32 @@ function BurgerMenuLink({ children }) {
   const pathname = usePathname().substring(1);
   console.log(pathname);
   useEffect(() => {
-    setLoading(false)
-  }, [pathname])
+    if (pathname === children.toLowerCase()) {
+      setLoading(false);
+    }
+  }, [pathname]);
   return (
     <Link
-      onClick={() => setLoading(true)}
+      onClick={() => {
+        if (pathname !== children.toLowerCase()) {
+          setLoading(true);
+        }
+      }}
       id="burger-menu-link"
       className={children.toLowerCase() === pathname ? "link-active" : ""}
       href={`/${children.toLowerCase()}`}
     >
-      {loading ? <span className="spinning">{icons.loading}</span> : <span>{children}</span>}
+      {loading ? (
+        <span className="spinning">{icons.loading}</span>
+      ) : (
+        <span>{children}</span>
+      )}
       <AnimatePresence>
         {children.toLowerCase() === pathname && (
           <motion.div
             initial={{ opacity: 0, width: "0%" }}
             animate={{ opacity: 1, width: "100%" }}
-            exit={{opacity: 0, width: "0%"}}
+            exit={{ opacity: 0, width: "0%" }}
             id="link-underline"
           ></motion.div>
         )}
